@@ -1,1 +1,69 @@
-Forest Fire Classifier
+# Forest Fire Detection with Machine Learning
+
+This project demonstrates how to build a machine learning pipeline for detecting wildfires from images. It uses a convolutional neural network (CNN) for classification and provides an interface for users to predict whether an image contains a wildfire using Gradio.
+
+---
+
+## 🚀 Features
+
+- **Deep Learning Model**: Implements a CNN for binary classification.
+- **Image Augmentation**: Prepares data using the `ImageDataGenerator` for efficient training.
+- **Prediction Interface**: Offers a simple web-based interface using Gradio for real-time predictions.
+
+---
+
+## 📂 Dataset Information
+
+- **Wildfire Prediction Dataset**: Automatically downloaded using KaggleHub. Includes train, validation, and test sets.
+- **Link**: https://www.kaggle.com/datasets/abdelghaniaaba/wildfire-prediction-dataset
+
+---
+
+## 🛠️ Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/forest-fire-detection.git
+   cd forest-fire-detection
+
+2. Install the required libraries:
+   ```bash
+   pip install tensorflow gradio kagglehub pillow
+
+3. Download the datasets using KaggleHub:
+   ```bash
+   import kagglehub
+   path = kagglehub.dataset_download("abdelghaniaaba/wildfire-prediction-dataset")
+   print("Dataset downloaded to:", path)
+
+## 🧠 Model Training
+1. Train the CNN model:
+   ```bash
+   history = model.fit(train_generator, validation_data=valid_generator, epochs=10, verbose=1)
+
+2. Save the model:
+   ```bash
+   model.save("ffd_model.h5")
+
+## 🌐 Usage
+1. Prediction Interface
+   ```bash
+  Launch the Gradio web interface:
+python app.py
+Upload an image and let the model predict whether it contains a wildfire or not.
+
+📊 Model Architecture
+The CNN architecture consists of:
+
+Convolutional Layers: Extracts features from images.
+Pooling Layers: Reduces dimensionality.
+Dense Layers: Performs classification.
+Dropout: Prevents overfitting.
+📸 Screenshot
+
+🛡️ Prerequisites
+Python 3.7 or above
+Kaggle account with API credentials (for downloading datasets)
+👩‍💻 Authors
+Your Name - Developer
+Contributions are welcome! Feel free to submit a pull request.
